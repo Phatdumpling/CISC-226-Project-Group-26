@@ -10,8 +10,8 @@
                     "type": "PassThrough",
                     "id": "bec9bd05-953e-4da7-99ce-c517ea61c4ab",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -41,7 +41,7 @@
                 {
                     "name": "up",
                     "id": "92685c91-72fd-4f04-905a-ffbc9e4c3e4b",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -52,7 +52,7 @@
                 {
                     "name": "down",
                     "id": "8e55e6eb-b7a3-4d02-bf2f-4fcc2e554449",
-                    "path": "",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -63,7 +63,7 @@
                 {
                     "name": "left",
                     "id": "e94ab188-d507-48a1-820c-47e91b41397c",
-                    "path": "",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -74,7 +74,7 @@
                 {
                     "name": "right",
                     "id": "d2c974ab-74a8-42ba-b622-e2b08bdd2ed3",
-                    "path": "",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
