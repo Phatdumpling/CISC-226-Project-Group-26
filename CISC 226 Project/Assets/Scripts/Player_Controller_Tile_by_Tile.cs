@@ -13,6 +13,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     private Tilemap groundTilemap;
     [SerializeField]
     private Tilemap collisionTileMap;
+    [SerializeField] private Tilemap collision_Interactable;
     
     
     
@@ -52,7 +53,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
-        if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition))
+        if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition)||collision_Interactable.HasTile(gridPosition))
         {
             return false;
         }
