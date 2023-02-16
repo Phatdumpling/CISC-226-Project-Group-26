@@ -19,6 +19,11 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     
     private Player_Movement_Tile_by_Tile controls;
     
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    public Animator anim;
+    Vector2 movement;
+    
 
     private void Awake()
     {
@@ -34,6 +39,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     {
         controls.Disable();
     }
+    
 
 
     // Start is called before the first frame update
@@ -46,8 +52,19 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     {
         if (CanMove(direction))
         {
-            transform.position += (Vector3)direction;
+            //transform.position += (Vector3)direction;
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
         }
+    }
+    
+    void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private bool CanMove(Vector2 direction)
