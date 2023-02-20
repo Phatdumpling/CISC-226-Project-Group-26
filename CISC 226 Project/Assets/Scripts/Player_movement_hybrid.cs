@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
 
-public class Player_Controller_Tile_by_Tile : MonoBehaviour
+public class Player_movement_hybrid : MonoBehaviour
 {
     
     [SerializeField]
@@ -19,6 +19,8 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     private Vector2 previous;
     
     private Player_Movement_Tile_by_Tile controls;
+
+    public LayerMask whatStopsMovement;
     
 
     private void Awake()
@@ -45,31 +47,28 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        if (CanMove(direction))
+        
+        if (CanMove(direction, transform.position + (Vector3)direction))
         {
-            previous = transform.position;
+            
             transform.position += (Vector3)direction;
             
         }
     }
 
-    private bool CanMove(Vector2 direction)
+    private bool CanMove(Vector2 direction, Vector3 Futurepos)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
+
+        if (Physics2D.OverlapCircle(Futurepos, whatStopsMovement))
+        {
+            return false;
+        }
         if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition)||collision_Interactable.HasTile(gridPosition))
         {
             return false;
         }
 
         return true;
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Colliding"))
-        {
-            transform.position = previous;
-        }
-        
     }
 }
