@@ -48,22 +48,23 @@ public class Player_movement_hybrid : MonoBehaviour
     private void Move(Vector2 direction)
     {
         
-        if (CanMove(direction, transform.position + (Vector3)direction))
+        if (CanMove(direction))
         {
-            
+            Vector3 prev = transform.position;
             transform.position += (Vector3)direction;
+            
+            if (Physics2D.OverlapCircle(transform.position, 0.2f, whatStopsMovement))
+            {
+                transform.position = prev;
+            }
             
         }
     }
 
-    private bool CanMove(Vector2 direction, Vector3 Futurepos)
+    private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
-
-        if (Physics2D.OverlapCircle(Futurepos, whatStopsMovement))
-        {
-            return false;
-        }
+        
         if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition)||collision_Interactable.HasTile(gridPosition))
         {
             return false;
