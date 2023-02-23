@@ -56,11 +56,14 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
-        if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition)||collision_Interactable.HasTile(gridPosition))
+        //collisionTileMap.HasTile(gridPosition)||
+        //|| collision_Interactable.HasTile(gridPosition)
+        if (!groundTilemap.HasTile(gridPosition) )
         {
+            print("false");
             return false;
         }
-
+        print("true");
         return true;
     }
 
@@ -69,6 +72,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
         if (col.gameObject.CompareTag("Colliding"))
         {
             transform.position = previous;
+            print("collision occured");
         }
         
     }

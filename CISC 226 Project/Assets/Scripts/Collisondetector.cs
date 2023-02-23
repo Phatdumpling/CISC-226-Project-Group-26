@@ -18,6 +18,7 @@ public class Collisondetector : MonoBehaviour
     {
         if (col.gameObject.GetComponent(_colliderScript))
         {
+            print("entered");
             _collisionEntered?.Invoke();
         }
     }
@@ -26,6 +27,7 @@ public class Collisondetector : MonoBehaviour
     {
         if (col.gameObject.GetComponent(_colliderScript))
         {
+            print("exit");
             _collisionExit?.Invoke();
         }
     }
