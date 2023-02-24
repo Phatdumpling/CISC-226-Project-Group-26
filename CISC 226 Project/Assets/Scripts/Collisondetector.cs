@@ -10,9 +10,12 @@ public class Collisondetector : MonoBehaviour
 
     [SerializeField] 
     private UnityEvent _collisionEntered;
+    
 
     [SerializeField] 
     private UnityEvent _collisionExit;
+    
+    public LayerMask thePlayer;
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -29,6 +32,15 @@ public class Collisondetector : MonoBehaviour
         {
             print("exit");
             _collisionExit?.Invoke();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer))
+        {
+            print("entered");
+            _collisionEntered?.Invoke();
         }
     }
 }
