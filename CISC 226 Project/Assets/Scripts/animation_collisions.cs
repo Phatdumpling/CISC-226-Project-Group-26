@@ -29,14 +29,23 @@ public class animation_collisions : MonoBehaviour
     private Player_Movement_Tile_by_Tile controls;
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("interactables"))
+        if (col.gameObject.CompareTag("interactables") || col.gameObject.CompareTag("Player"))
         {
             print("entered");
             _collisionEntered?.Invoke();
         }
         
     }
-    
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("interactables"))
+        {
+            print("entered");
+            _collisionEntered?.Invoke();
+        }
+    }
+
     /*
     private void OnCollisionEnter2D(Collision2D col)
     {

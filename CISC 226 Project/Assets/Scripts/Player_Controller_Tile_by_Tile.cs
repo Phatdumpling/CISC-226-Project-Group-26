@@ -62,7 +62,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
         //collisionTileMap.HasTile(gridPosition)||
         //|| collision_Interactable.HasTile(gridPosition)
-        if (!groundTilemap.HasTile(gridPosition) )
+        if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition))
         {
             print("false");
             return false;
