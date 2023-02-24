@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Colliding
   - interactables
+  - interactables2
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: collisions
+    uniqueID: 2306976523
+    locked: 0
+  - name: interactables
+    uniqueID: 2511252927
     locked: 0

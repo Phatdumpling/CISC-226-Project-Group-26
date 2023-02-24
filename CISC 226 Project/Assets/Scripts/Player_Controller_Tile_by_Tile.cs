@@ -8,7 +8,9 @@ using UnityEngine.Tilemaps;
 
 public class Player_Controller_Tile_by_Tile : MonoBehaviour
 {
-    
+    public float moveSpeed = 1f;
+
+    public Transform movePoint;
     [SerializeField]
     private Tilemap groundTilemap;
     [SerializeField]
@@ -40,6 +42,7 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        movePoint.parent = null;
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
     }
 
@@ -47,9 +50,10 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
     {
         if (CanMove(direction))
         {
+            
             previous = transform.position;
             transform.position += (Vector3)direction;
-            
+            movePoint.position += Vector3.MoveTowards(movePoint.position, transform.position, moveSpeed*Time.deltaTime);
         }
     }
 
