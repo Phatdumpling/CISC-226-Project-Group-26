@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mail;
 using UnityEngine;
 using UnityEngine.Events;
 public class Collisondetector : MonoBehaviour
 {
+    private int counter = 0;
     [SerializeField]
     private string _colliderScript;
 
@@ -21,8 +23,8 @@ public class Collisondetector : MonoBehaviour
     {
         if (col.gameObject.GetComponent(_colliderScript))
         {
-            print("entered");
-            _collisionEntered?.Invoke();
+            //print("entered");
+          //  _collisionEntered?.Invoke();
         }
     }
     
@@ -31,16 +33,24 @@ public class Collisondetector : MonoBehaviour
         if (col.gameObject.GetComponent(_colliderScript))
         {
             print("exit");
-            _collisionExit?.Invoke();
+           // _collisionExit?.Invoke();
         }
     }
 
     private void FixedUpdate()
     {
+        
         if (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer))
         {
             print("entered");
             _collisionEntered?.Invoke();
+            counter = 1;
         }
+        else if(counter >= 1)
+        {
+            _collisionExit?.Invoke();
+            counter = 0;
+        }
+        
     }
 }
