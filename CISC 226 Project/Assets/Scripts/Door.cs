@@ -17,14 +17,10 @@ public class Door : MonoBehaviour
     {
         _animator.SetTrigger(name:"Open");
     }
+
     [ContextMenu(itemName: "Close")]
     public void Close()
     {
-        _animator.SetTrigger(name:"Close");
-    }
-
-    public void ball()
-    {
-        
+        _animator.SetTrigger(name: "Close");
     }
 }

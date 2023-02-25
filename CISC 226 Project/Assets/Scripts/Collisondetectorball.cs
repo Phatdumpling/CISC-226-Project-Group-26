@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Net.Mail;
 using UnityEngine;
 using UnityEngine.Events;
+using Vector3 = System.Numerics.Vector3;
+
 public class Collisondetectorball : MonoBehaviour
 {
     private int counter = 0;
     [SerializeField]
     private string _colliderScript;
+    public Transform player;
 
     [SerializeField] 
     private UnityEvent _collisionEntered;
@@ -43,11 +46,15 @@ public class Collisondetectorball : MonoBehaviour
         if (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer))
         {
             print("entered");
-            do
-            {
-                //transform.position += ;
-            } while (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer));
-             
+            //print(transform.position);
+            
+            print(player.GetChild(0).position);
+            
+            transform.position += UnityEngine.Vector3.right;
+            transform.position += UnityEngine.Vector3.left;
+            transform.position += UnityEngine.Vector3.up;
+            transform.position += UnityEngine.Vector3.down;
+            //print(transform.position);
             counter = 1;
         }
     }
