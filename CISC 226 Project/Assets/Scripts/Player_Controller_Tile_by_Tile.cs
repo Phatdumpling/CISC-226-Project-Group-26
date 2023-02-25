@@ -53,7 +53,9 @@ public class Player_Controller_Tile_by_Tile : MonoBehaviour
             
             previous = transform.position;
             transform.position += (Vector3)direction;
-            movePoint.position += Vector3.MoveTowards(movePoint.position, transform.position, moveSpeed*Time.deltaTime);
+            print(transform.position);
+            print(movePoint.position);
+            movePoint.position += Vector3.MoveTowards(transform.position, transform.position, moveSpeed*Time.deltaTime);
         }
     }
 
