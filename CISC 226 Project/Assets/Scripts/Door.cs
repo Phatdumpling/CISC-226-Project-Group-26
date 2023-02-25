@@ -22,4 +22,9 @@ public class Door : MonoBehaviour
     {
         _animator.SetTrigger(name:"Close");
     }
+
+    public void ball()
+    {
+        
+    }
 }
