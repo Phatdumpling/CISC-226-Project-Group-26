@@ -26,7 +26,7 @@ public class Collisondetectorball : MonoBehaviour
     {
         if (col.gameObject.GetComponent(_colliderScript))
         {
-            //print("entered");
+            print("entered");
           //  _collisionEntered?.Invoke();
         }
     }
@@ -45,15 +45,33 @@ public class Collisondetectorball : MonoBehaviour
         
         if (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer))
         {
-            print("entered");
-            //print(transform.position);
+            //print("entered");
             
-            print(player.GetChild(0).position);
+            if (player.GetChild(0).position.x + 0.3 > transform.position.x &&
+                player.GetChild(0).position.x - 0.3 < transform.position.x)
+            {
+                print("invalid");
+            }
+            else
+            {
+                print("tansform position x" + transform.position.x);
+                print("tansform position y" + transform.position.y);
+                print("child position y" + player.GetChild(0).position.x);
+                print("child position y" + player.GetChild(0).position.y);
+                if (transform.position.x < player.GetChild(0).position.x)
+                {
+                    transform.position += UnityEngine.Vector3.right;
+                }
+                if (transform.position.x > player.GetChild(0).position.x)
+                {
+                    transform.position += UnityEngine.Vector3.left;
+                }
+            }
             
-            transform.position += UnityEngine.Vector3.right;
-            transform.position += UnityEngine.Vector3.left;
-            transform.position += UnityEngine.Vector3.up;
-            transform.position += UnityEngine.Vector3.down;
+            
+            
+            //transform.position += UnityEngine.Vector3.up;
+            //transform.position += UnityEngine.Vector3.down;
             //print(transform.position);
             counter = 1;
         }
