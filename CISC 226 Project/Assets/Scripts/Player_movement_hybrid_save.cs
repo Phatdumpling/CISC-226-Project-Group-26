@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
 
-public class Future_Controller : Position_save
+public class Player_movement_hybrid_save : Position_save
 {
     
     [SerializeField]
@@ -18,16 +18,14 @@ public class Future_Controller : Position_save
 
     private Vector2 previous;
     
-    private Future_movement controls;
+    private Player_Movement_Tile_by_Tile controls;
 
     public LayerMask whatStopsMovement;
-
-    public Transform past_self_position;
     
 
     private void Awake()
     {
-        controls = new Future_movement();
+        controls = new Player_Movement_Tile_by_Tile();
     }
 
     private void OnEnable()
@@ -61,8 +59,8 @@ public class Future_Controller : Position_save
             }
             else
             {
-                past_self_position.position = positions[0];
-                positions.RemoveAt(0);
+                positions.Add(transform.position);
+                Console.WriteLine("positions.ToString()");
             }
             
         }
