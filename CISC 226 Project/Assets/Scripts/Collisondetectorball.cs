@@ -67,6 +67,26 @@ public class Collisondetectorball : MonoBehaviour
                     transform.position += UnityEngine.Vector3.left;
                 }
             }
+            if (player.GetChild(0).position.y + 0.3 > transform.position.y &&
+                player.GetChild(0).position.y - 0.3 < transform.position.y)
+            {
+                print("invalid");
+            }
+            else
+            {
+                print("tansform position x" + transform.position.x);
+                print("tansform position y" + transform.position.y);
+                print("child position y" + player.GetChild(0).position.x);
+                print("child position y" + player.GetChild(0).position.y);
+                if (transform.position.y < player.GetChild(0).position.y)
+                {
+                    transform.position += UnityEngine.Vector3.up;
+                }
+                if (transform.position.y > player.GetChild(0).position.y)
+                {
+                    transform.position += UnityEngine.Vector3.down;
+                }
+            }
             
             
             

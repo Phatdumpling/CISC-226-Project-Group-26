@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
 
-public class Future_Controller : Position_save
+public class Future_Controller : MonoBehaviour
 {
     
     [SerializeField]
@@ -21,8 +21,6 @@ public class Future_Controller : Position_save
     private Future_movement controls;
 
     public LayerMask whatStopsMovement;
-
-    public Transform past_self_position;
     
 
     private void Awake()
@@ -58,11 +56,6 @@ public class Future_Controller : Position_save
             if (Physics2D.OverlapCircle(transform.position, 0.2f, whatStopsMovement))
             {
                 transform.position = prev;
-            }
-            else
-            {
-                past_self_position.position = positions[0];
-                positions.RemoveAt(0);
             }
             
         }
