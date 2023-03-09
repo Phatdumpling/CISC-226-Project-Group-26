@@ -4028,7 +4028,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1143434557}
   - component: {fileID: 1143434558}
-  - component: {fileID: 1143434560}
   - component: {fileID: 1143434559}
   m_Layer: 10
   m_Name: Past Sprite
@@ -4129,24 +4128,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40929914, y: 0.6220332}
   m_EdgeRadius: 0
---- !u!114 &1143434560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143434556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77626772debfcaf41bdf2e01e8904e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundTilemap: {fileID: 424205534}
-  collisionTileMap: {fileID: 1648042341}
-  collision_Interactable: {fileID: 1921475965}
-  whatStopsMovement:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &1160900111
 GameObject:
   m_ObjectHideFlags: 0
