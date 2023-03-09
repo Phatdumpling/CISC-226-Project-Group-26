@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Future_Controller : Position_save
 {
@@ -23,7 +24,9 @@ public class Future_Controller : Position_save
     public LayerMask whatStopsMovement;
 
     public Transform past_self_position;
-    
+
+    public int counter = 0;
+    public int extra_actions = 5;
 
     private void Awake()
     {
@@ -49,7 +52,6 @@ public class Future_Controller : Position_save
 
     private void Move(Vector2 direction)
     {
-        
         if (CanMove(direction))
         {
             Vector3 prev = transform.position;
@@ -61,8 +63,23 @@ public class Future_Controller : Position_save
             }
             else
             {
-                past_self_position.position = positions[0];
-                positions.RemoveAt(0);
+                print(positions.Count);
+                if (counter < positions.Count)
+                {
+                    past_self_position.position = positions[counter];
+                    counter++;
+                }
+                else
+                {
+                    extra_actions--;
+                    if (extra_actions == 0)
+                    {
+                        SceneManager.LoadScene("End Screen");
+                    }
+                }
+                
+                
+                //positions.RemoveAt(0);
             }
             
         }

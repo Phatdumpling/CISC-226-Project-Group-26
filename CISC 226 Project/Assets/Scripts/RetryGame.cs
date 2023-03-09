@@ -8,6 +8,6 @@ public class RetryGame : MonoBehaviour
     // Start is called before the first frame update
     public void LoadGame()
     {
-        SceneManager.LoadScene("Future test 1");
+        SceneManager.LoadScene("Saving test");
     }
 }
