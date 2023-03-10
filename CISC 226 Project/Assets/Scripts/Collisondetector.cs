@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Collisondetector : MonoBehaviour
 {
     private int counter = 0;
+    private int start_working = 0;
     [SerializeField]
     private string _colliderScript;
 
@@ -32,7 +33,7 @@ public class Collisondetector : MonoBehaviour
     {
         if (col.gameObject.GetComponent(_colliderScript))
         {
-            print("exit");
+           // print("exit");
            // _collisionExit?.Invoke();
         }
     }
@@ -42,12 +43,14 @@ public class Collisondetector : MonoBehaviour
         
         if (Physics2D.OverlapCircle(transform.position, 0.2f, thePlayer))
         {
-            print("entered");
+            print("trigger2");
             _collisionEntered?.Invoke();
             counter = 1;
+            start_working ++;
         }
-        else if(counter >= 1)
+        else if(counter >= 1&&start_working>=50)
         {
+            print("trigger1");
             _collisionExit?.Invoke();
             counter = 0;
         }
