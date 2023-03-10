@@ -21,7 +21,11 @@ public class Player_movement_hybrid_save : Position_save
     private Player_Movement_Tile_by_Tile controls;
 
     public LayerMask whatStopsMovement;
-    
+
+    public Sprite Up;
+    public Sprite Down;
+    public Sprite Left;
+    public Sprite Right;
 
     private void Awake()
     {
@@ -60,7 +64,31 @@ public class Player_movement_hybrid_save : Position_save
             else
             {
                 positions.Add(transform.position);
-                Console.WriteLine("positions.ToString()");
+
+                if (transform.position.x - prev.x > 0)
+                {
+                    facing_dir.Add("Right");
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Right;
+
+                } else if (transform.position.x - prev.x < 0)
+                {
+                    facing_dir.Add("Left");
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+                    
+                } else if (transform.position.y - prev.y > 0)
+                {
+                    facing_dir.Add("Up");
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+                    
+                } else if (transform.position.y - prev.y < 0)
+                {
+                    facing_dir.Add("Down");
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+                    
+                }
+
+                Console.WriteLine(positions.ToString());
+                Console.WriteLine(facing_dir.ToString());
             }
             
         }

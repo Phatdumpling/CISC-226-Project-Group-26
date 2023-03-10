@@ -24,6 +24,14 @@ public class Future_Controller : Position_save
     public LayerMask whatStopsMovement;
 
     public Transform past_self_position;
+    public GameObject pastSelfObject;
+    
+    public Sprite Up;
+    public Sprite Down;
+    public Sprite Left;
+    public Sprite Right;
+
+
 
     public int counter = 0;
     public int extra_actions = 5;
@@ -61,12 +69,13 @@ public class Future_Controller : Position_save
             {
                 transform.position = prev;
             }
-            else
+            else // This else statement is when it is valid to move
             {
                 print(positions.Count);
                 if (counter < positions.Count)
                 {
                     past_self_position.position = positions[counter];
+                    PastPlayerRotate(pastSelfObject, facing_dir[counter]);
                     counter++;
                 }
                 else
@@ -77,6 +86,11 @@ public class Future_Controller : Position_save
                         SceneManager.LoadScene("End Screen");
                     }
                 }
+                
+                
+                // Future self rotate
+                
+                FutureRotate(prev);
                 
                 
                 //positions.RemoveAt(0);
@@ -96,4 +110,48 @@ public class Future_Controller : Position_save
 
         return true;
     }
+
+    private void PastPlayerRotate(GameObject theObject, String Direction)
+    {
+        if (Direction == "Right")
+        {
+            theObject.GetComponent<SpriteRenderer>().sprite = Right;
+
+        } else if (Direction == "Left")
+        {
+            theObject.GetComponent<SpriteRenderer>().sprite = Left;
+                    
+        } else if (Direction == "Up")
+        {
+            theObject.GetComponent<SpriteRenderer>().sprite = Up;
+                    
+        } else if (Direction == "Down")
+        {
+            theObject.GetComponent<SpriteRenderer>().sprite = Down;
+                    
+        }
+    }
+
+
+    private void FutureRotate(Vector3 previous)
+    {
+        if (transform.position.x - previous.x > 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Right;
+
+        } else if (transform.position.x - previous.x < 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+                    
+        } else if (transform.position.y - previous.y > 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+                    
+        } else if (transform.position.y - previous.y < 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+                    
+        }
+    }
+    
 }
