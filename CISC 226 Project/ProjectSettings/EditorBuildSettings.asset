@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Future test 1.unity
     guid: cee54cfcede7fa84ab2baa8283d9ee49
   - enabled: 1
-    path: Assets/Scenes/Default test 3.unity
+    path: Assets/Scenes/Level look 1.unity
     guid: 9d315f1a00d69d449b1847524c7e16a7
   - enabled: 1
     path: Assets/Scenes/End Screen.unity

@@ -2538,6 +2538,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: fc8f49ced1933dd448b75913e465a352, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 543fdd1aa2c5b434682bccf97b0fcdbe, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -3505,6 +3507,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   past_self_position: {fileID: 1143434557}
+  pastSelfObject: {fileID: 0}
+  Up: {fileID: 0}
+  Down: {fileID: 0}
+  Left: {fileID: 0}
+  Right: {fileID: 0}
   counter: 0
   extra_actions: 5
 --- !u!212 &1039407220
@@ -4022,6 +4029,10 @@ MonoBehaviour:
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 256
+  Up: {fileID: 0}
+  Down: {fileID: 0}
+  Left: {fileID: 0}
+  Right: {fileID: 0}
 --- !u!1 &1160900111
 GameObject:
   m_ObjectHideFlags: 0
