@@ -16,6 +16,8 @@ public class Future_Controller : Position_save
     private Tilemap collisionTileMap;
     [SerializeField] 
     private Tilemap collision_Interactable;
+    [SerializeField] 
+    private Tilemap past_is_short;
 
     private Vector2 previous;
     
@@ -25,6 +27,10 @@ public class Future_Controller : Position_save
 
     public Transform past_self_position;
     public GameObject pastSelfObject;
+    public Transform death_sight1;
+    public Transform death_sight2;
+    public Transform death_sight3;
+    
     
     public Sprite Up;
     public Sprite Down;
@@ -34,7 +40,7 @@ public class Future_Controller : Position_save
 
 
     public int counter = 0;
-    public int extra_actions = 5;
+    public int extra_actions = 20;
 
     private void Awake()
     {
@@ -113,23 +119,69 @@ public class Future_Controller : Position_save
 
     private void PastPlayerRotate(GameObject theObject, String Direction)
     {
+
+        Vector3 temp = Vector3.zero;
+
         if (Direction == "Right")
         {
             theObject.GetComponent<SpriteRenderer>().sprite = Right;
 
+            temp = Vector3.right;
+
         } else if (Direction == "Left")
         {
             theObject.GetComponent<SpriteRenderer>().sprite = Left;
-                    
+
+            temp = Vector3.left;
+
         } else if (Direction == "Up")
         {
             theObject.GetComponent<SpriteRenderer>().sprite = Up;
-                    
+
+            temp = Vector3.up;
+
         } else if (Direction == "Down")
         {
             theObject.GetComponent<SpriteRenderer>().sprite = Down;
+
+            temp = Vector3.down;
+            
                     
         }
+        
+        Sightmove(theObject, temp); // Moving the sight
+        
+        
+        // This section Accounts for sight bumping into walls
+        Vector3Int DS1 = groundTilemap.WorldToCell(death_sight1.position);
+        Vector3Int DS2 = groundTilemap.WorldToCell(death_sight2.position);
+        Vector3Int DS3 = groundTilemap.WorldToCell(death_sight3.position);
+        
+        if (collisionTileMap.HasTile(DS1)||past_is_short.HasTile(DS1))
+        {
+            death_sight1.position = past_self_position.position;
+            death_sight2.position = past_self_position.position;
+            death_sight3.position = past_self_position.position;
+            
+        } else if ((collisionTileMap.HasTile(DS2)||past_is_short.HasTile(DS2)))
+        {
+            death_sight2.position = death_sight1.position;
+            death_sight3.position = death_sight1.position;
+            
+        } else if ((collisionTileMap.HasTile(DS3)||past_is_short.HasTile(DS3)))
+        {
+            death_sight3.position = death_sight2.position;
+            
+        }
+        
+        
+    }
+
+    private void Sightmove(GameObject theObject, Vector3 DirectionVec)
+    {
+        death_sight1.position = theObject.transform.position + DirectionVec;
+        death_sight2.position = theObject.transform.position + DirectionVec * 2;
+        death_sight3.position = theObject.transform.position + DirectionVec * 3;
     }
 
 
@@ -153,5 +205,5 @@ public class Future_Controller : Position_save
                     
         }
     }
-    
+
 }
