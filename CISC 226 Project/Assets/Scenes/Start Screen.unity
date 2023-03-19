@@ -663,6 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea7b13bc7d3aa2448e15faac2f4a1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisObj: {fileID: 0}
+  IsParent: {fileID: 0}
 --- !u!114 &1572190175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +709,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1572190174}
-        m_MethodName: StartMenu
+        m_MethodName: OptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -884,6 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea7b13bc7d3aa2448e15faac2f4a1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisObj: {fileID: 0}
+  IsParent: {fileID: 0}
 --- !u!114 &1830079950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,6 +1032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea7b13bc7d3aa2448e15faac2f4a1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisObj: {fileID: 1127264904478936603, guid: 805341f8d064d4a43b968b4b36f58a13, type: 3}
+  IsParent: {fileID: 1942445391}
 --- !u!114 &1928505922
 MonoBehaviour:
   m_ObjectHideFlags: 0
