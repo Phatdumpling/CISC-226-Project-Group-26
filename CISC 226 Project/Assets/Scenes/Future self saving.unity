@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene test
       objectReference: {fileID: 0}
+    - target: {fileID: 4199985494544557091, guid: b1ff85badbfb98d4b97acc1831e1e588,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4199985496160058592, guid: b1ff85badbfb98d4b97acc1831e1e588,
         type: 3}
       propertyPath: Loop
