@@ -114,6 +114,11 @@ public class Future_Controller : Position_save
             return false;
         }
 
+        if (PauseMenu.isPaused == true)
+        {
+            return false;
+        }
+
         return true;
     }
 
