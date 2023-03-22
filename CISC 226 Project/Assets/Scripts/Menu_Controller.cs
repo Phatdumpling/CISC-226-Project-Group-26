@@ -8,7 +8,8 @@ public class Menu_Controller : MonoBehaviour
 {
 
     [SerializeField] private GameObject thisObj;
-    [SerializeField] private GameObject IsParent;
+    [SerializeField] private GameObject HowToPlayObj;
+    [SerializeField] private Canvas HowToPlayCanvas;
     
     
     // Start is called before the first frame update
@@ -19,7 +20,9 @@ public class Menu_Controller : MonoBehaviour
 
     public void HowToPlay()
     {
-        SceneManager.LoadScene("How to play");
+        //SceneManager.LoadScene("How to play");
+        HowToPlayCanvas.transform.localScale = HowToPlayCanvas.transform.localScale / 2;
+        HowToPlayCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
     }
 
     public void StartMenu()

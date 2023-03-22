@@ -508,6 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theMusic: {fileID: 0}
   PauseMenuUI: {fileID: 4728100431789463858}
+  theCanvas: {fileID: 0}
 --- !u!1 &4728100432091674677
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7774125680678731263}
   - component: {fileID: 7774125680678731248}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: How to Play Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,6 +288,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7774125680678731261}
     m_Modifications:
+    - target: {fileID: 1127264903956466328, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 255.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127264903956466328, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 86.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1127264904478936600, guid: 805341f8d064d4a43b968b4b36f58a13,
         type: 3}
       propertyPath: m_Pivot.x
@@ -400,8 +410,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127264905180901021, guid: 805341f8d064d4a43b968b4b36f58a13,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 626
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127264905180901021, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 278.1543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127264905180901021, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127264905180901021, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000017166
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127264905180901021, guid: 805341f8d064d4a43b968b4b36f58a13,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 805341f8d064d4a43b968b4b36f58a13, type: 3}

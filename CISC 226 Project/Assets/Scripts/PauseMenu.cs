@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditorInternal.VersionControl;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -14,8 +16,16 @@ public class PauseMenu : MonoBehaviour
     //private float MixerVol = 0;
 
     public GameObject PauseMenuUI;
+    public Canvas theCanvas;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        PauseMenuUI.SetActive(false);
+        theCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
