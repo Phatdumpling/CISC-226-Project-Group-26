@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class RetryGame : MonoBehaviour
 {
     // Start is called before the first frame update
+    public AudioSource theMusic;
     public void LoadGame()
     {
+        //theMusic.UnPause();
         SceneManager.LoadScene("Future self saving");
+        
     }
 }

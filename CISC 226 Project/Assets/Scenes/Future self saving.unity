@@ -265,6 +265,21 @@ PrefabInstance:
       propertyPath: m_OcclusionCulling
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4199985495880814598, guid: b1ff85badbfb98d4b97acc1831e1e588,
+        type: 3}
+      propertyPath: theMusic
+      value: 
+      objectReference: {fileID: 634151834}
+    - target: {fileID: 4199985495880814598, guid: b1ff85badbfb98d4b97acc1831e1e588,
+        type: 3}
+      propertyPath: GameOverObj
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199985495880814598, guid: b1ff85badbfb98d4b97acc1831e1e588,
+        type: 3}
+      propertyPath: GameoverCanvas
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4199985496160058592, guid: b1ff85badbfb98d4b97acc1831e1e588,
         type: 3}
       propertyPath: Loop
@@ -293,6 +308,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1ff85badbfb98d4b97acc1831e1e588, type: 3}
+--- !u!223 &1495455667 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4728100431928119881, guid: 6b86a7d3f21091e4b9b4d88c8e2cef57,
+    type: 3}
+  m_PrefabInstance: {fileID: 4728100430543932772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1759009892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4199985496160058593, guid: b1ff85badbfb98d4b97acc1831e1e588,
@@ -394,6 +415,11 @@ PrefabInstance:
       propertyPath: theMusic
       value: 
       objectReference: {fileID: 634151834}
+    - target: {fileID: 4728100431928119883, guid: 6b86a7d3f21091e4b9b4d88c8e2cef57,
+        type: 3}
+      propertyPath: theCanvas
+      value: 
+      objectReference: {fileID: 1495455667}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b86a7d3f21091e4b9b4d88c8e2cef57, type: 3}
 --- !u!1001 &4990084326439513056
@@ -412,6 +438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809237536631571561, guid: f5dbf748345d98a41b4a3f5b3927ee5b,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6809237536631571561, guid: f5dbf748345d98a41b4a3f5b3927ee5b,
         type: 3}

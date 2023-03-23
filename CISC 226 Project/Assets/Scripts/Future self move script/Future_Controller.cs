@@ -89,7 +89,8 @@ public class Future_Controller : Position_save
                     extra_actions--;
                     if (extra_actions == 0)
                     {
-                        SceneManager.LoadScene("End Screen");
+                        Death.Instance.GameOver();
+                        
                     }
                 }
                 
