@@ -98,6 +98,8 @@ public class Future_Controller : Position_save
                 
                 FutureRotate(prev);
                 
+                AudioManager.Instance.PlaySFX("Move");
+                
                 
                 //positions.RemoveAt(0);
             }
