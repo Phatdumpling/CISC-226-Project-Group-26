@@ -20,11 +20,11 @@ public class PauseAudio : MonoBehaviour
         audioMixer.GetFloat("Volume", out float MasterVolume);
         MasterSlider.value = MasterVolume;
         
-        audioMixer.GetFloat("Music", out float MusicVolume);
+        audioMixer.GetFloat("MusicExpose", out float MusicVolume);
         MusicSlider.value = MusicVolume;
         
-        audioMixer.GetFloat("SFX", out float SFXrVolume);
-        SFXSlider.value = SFXrVolume;
+        audioMixer.GetFloat("SFXExpose", out float SFXVolume);
+        SFXSlider.value = SFXVolume;
     }
     
     public void SetMasterVolume(float volume)

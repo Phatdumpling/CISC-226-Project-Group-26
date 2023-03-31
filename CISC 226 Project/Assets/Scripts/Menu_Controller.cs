@@ -15,7 +15,7 @@ public class Menu_Controller : MonoBehaviour
     // Start is called before the first frame update
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Past self saving");
+        SceneManager.LoadScene("Level 2 past self 1");
     }
 
     public void HowToPlay()

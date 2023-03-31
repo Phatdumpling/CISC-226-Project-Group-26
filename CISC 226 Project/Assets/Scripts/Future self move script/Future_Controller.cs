@@ -32,10 +32,16 @@ public class Future_Controller : Position_save
     public Transform death_sight3;
     
     
-    public Sprite Up;
-    public Sprite Down;
-    public Sprite Left;
-    public Sprite Right;
+    public Sprite UpF;
+    public Sprite DownF;
+    public Sprite LeftF;
+    public Sprite RightF;
+
+    public Sprite UpP;
+    public Sprite DownP;
+    public Sprite LeftP;
+    public Sprite RightP;
+    
 
 
 
@@ -71,7 +77,7 @@ public class Future_Controller : Position_save
             Vector3 prev = transform.position;
             transform.position += (Vector3)direction;
             
-            if (Physics2D.OverlapCircle(transform.position, 0.2f, whatStopsMovement))
+            if (Physics2D.OverlapCircle(transform.position + Vector3.down/2, 0.2f, whatStopsMovement))
             {
                 transform.position = prev;
             }
@@ -132,25 +138,25 @@ public class Future_Controller : Position_save
 
         if (Direction == "Right")
         {
-            theObject.GetComponent<SpriteRenderer>().sprite = Right;
+            theObject.GetComponent<SpriteRenderer>().sprite = RightP;
 
             temp = Vector3.right;
 
         } else if (Direction == "Left")
         {
-            theObject.GetComponent<SpriteRenderer>().sprite = Left;
+            theObject.GetComponent<SpriteRenderer>().sprite = LeftP;
 
             temp = Vector3.left;
 
         } else if (Direction == "Up")
         {
-            theObject.GetComponent<SpriteRenderer>().sprite = Up;
+            theObject.GetComponent<SpriteRenderer>().sprite = UpP;
 
             temp = Vector3.up;
 
         } else if (Direction == "Down")
         {
-            theObject.GetComponent<SpriteRenderer>().sprite = Down;
+            theObject.GetComponent<SpriteRenderer>().sprite = DownP;
 
             temp = Vector3.down;
             
@@ -187,9 +193,9 @@ public class Future_Controller : Position_save
 
     private void Sightmove(GameObject theObject, Vector3 DirectionVec)
     {
-        death_sight1.position = theObject.transform.position + DirectionVec;
-        death_sight2.position = theObject.transform.position + DirectionVec * 2;
-        death_sight3.position = theObject.transform.position + DirectionVec * 3;
+        death_sight1.position = theObject.transform.position + DirectionVec + Vector3.down/2;
+        death_sight2.position = theObject.transform.position + DirectionVec * 2 + Vector3.down/2;
+        death_sight3.position = theObject.transform.position + DirectionVec * 3 + Vector3.down/2;
     }
 
 
@@ -197,19 +203,19 @@ public class Future_Controller : Position_save
     {
         if (transform.position.x - previous.x > 0)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Right;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = RightF;
 
         } else if (transform.position.x - previous.x < 0)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = LeftF;
                     
         } else if (transform.position.y - previous.y > 0)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = UpF;
                     
         } else if (transform.position.y - previous.y < 0)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = DownF;
                     
         }
     }

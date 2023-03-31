@@ -15,9 +15,9 @@ public class Win : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, whatwin))
+        if (Physics2D.OverlapCircle(transform.position + Vector3.down/2, 0.2f, whatwin))
         {
-            SceneManager.LoadScene("Future self saving");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

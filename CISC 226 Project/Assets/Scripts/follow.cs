@@ -15,6 +15,6 @@ public class follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = followthis.position;
+        transform.position = followthis.position + Vector3.down/2;
     }
 }

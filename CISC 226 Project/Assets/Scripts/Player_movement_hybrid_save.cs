@@ -47,6 +47,9 @@ public class Player_movement_hybrid_save : Position_save
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+        
+        positions = new List<Vector3>();
+        facing_dir = new List<String>();
     }
 
     private void Move(Vector2 direction)
@@ -57,7 +60,7 @@ public class Player_movement_hybrid_save : Position_save
             Vector3 prev = transform.position;
             transform.position += (Vector3)direction;
             
-            if (Physics2D.OverlapCircle(transform.position, 0.2f, whatStopsMovement))
+            if (Physics2D.OverlapCircle(transform.position + Vector3.down/2, 0.2f, whatStopsMovement))
             {
                 transform.position = prev;
             }
@@ -86,6 +89,8 @@ public class Player_movement_hybrid_save : Position_save
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = Down;
                     
                 }
+                
+                AudioManager.Instance.PlaySFX("Move");
 
                 Console.WriteLine(positions.ToString());
                 Console.WriteLine(facing_dir.ToString());
@@ -99,6 +104,11 @@ public class Player_movement_hybrid_save : Position_save
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
         
         if (!groundTilemap.HasTile(gridPosition) || collisionTileMap.HasTile(gridPosition)||collision_Interactable.HasTile(gridPosition))
+        {
+            return false;
+        }
+        
+        if (PauseMenu.isPaused == true)
         {
             return false;
         }

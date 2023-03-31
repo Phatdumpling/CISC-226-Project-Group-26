@@ -21,12 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Saving test.unity
     guid: 7e1b0e0d59da8b4408fee0da391b0834
   - enabled: 1
-    path: Assets/Scenes/Past self saving.unity
-    guid: a1958c1709583194bab9ee277a3e9f0a
-  - enabled: 1
-    path: Assets/Scenes/Future self saving.unity
-    guid: bce904084ae4d1644ac4bee530daf22b
-  - enabled: 1
     path: Assets/Scenes/Victory!.unity
     guid: 158a0b497acf8be4ab11070ec7f85dd0
   - enabled: 1
@@ -35,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 76badbdeb5b4c1448bbb31ccbc46d547
+  - enabled: 1
+    path: Assets/Scenes/Level 2 past self 1.unity
+    guid: 001c4ffc2179886439021f1ac3b34733
+  - enabled: 1
+    path: Assets/Scenes/Level 2 future self.unity
+    guid: be342eb1cfb27c1429384527105e7e8f
+  - enabled: 1
+    path: Assets/Scenes/Past self saving.unity
+    guid: a1958c1709583194bab9ee277a3e9f0a
+  - enabled: 1
+    path: Assets/Scenes/Future self saving.unity
+    guid: bce904084ae4d1644ac4bee530daf22b
   m_configObjects: {}

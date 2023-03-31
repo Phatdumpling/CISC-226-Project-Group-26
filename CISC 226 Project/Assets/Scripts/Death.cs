@@ -7,6 +7,8 @@ public class Death : MonoBehaviour
 {
     // Start is called before the first frame update
     public LayerMask whatdeath;
+    public LayerMask whatwin;
+    
     public AudioSource theMusic;
 
     public Canvas GameoverCanvas;
@@ -35,7 +37,18 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, whatdeath))
+        if (Physics2D.OverlapCircle(transform.position + Vector3.down/2, 0.2f, whatwin))
+        {
+            if (SceneManager.GetActiveScene().name == "Future self saving")
+            {
+                SceneManager.LoadScene("Victory!");
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+                
+        } else if (Physics2D.OverlapCircle(transform.position + Vector3.down/2, 0.2f, whatdeath))
         {
             GameOver();
         }
