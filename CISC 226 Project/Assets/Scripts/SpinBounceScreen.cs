@@ -14,13 +14,6 @@ public class SpinBounceScreen : MonoBehaviour
     public Vector2 move_dir = new Vector2(0,0);
     private Vector2 lastpos;
 
-    private Vector2 upBoundary;
-    private Vector2 downBoundary;
-    private Vector2 leftBoundary;
-    private Vector2 rightBoundary;
-
-    private int bootlegcounter = 0;
-    
     private void Start()
     {
         //transform = GetComponent<RectTransform>();
@@ -28,12 +21,6 @@ public class SpinBounceScreen : MonoBehaviour
         //canvasRect.x = canvasRect.width/2;
         //canvasRect.y = canvasRect.height/2;
 
-        upBoundary = Vector2.up * canvasRect.height;
-        downBoundary = -Vector2.down * canvasRect.height;
-        leftBoundary = -Vector2.left * canvasRect.width;
-        rightBoundary = Vector2.right * canvasRect.width;
-        
-        
         move_dir = new Vector2(Random.Range(-100, 100), Random.Range(-100, 100)).normalized;
     }
     
