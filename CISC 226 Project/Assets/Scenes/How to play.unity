@@ -218,6 +218,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: How To Play
       objectReference: {fileID: 0}
+    - target: {fileID: 7774125681573686400, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 418bc76e116884a4684af1f18ecc96f1,
+        type: 3}
     - target: {fileID: 7774125681573686401, guid: 1fa910881ba65b8469ecca6b58244917,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -272,6 +278,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774125682164482350, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774125682164482351, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 588.8014
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774125682164482351, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 204.05238
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774125682164482351, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774125682164482351, guid: 1fa910881ba65b8469ecca6b58244917,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -63.5
       objectReference: {fileID: 0}
     - target: {fileID: 7774125682478140420, guid: 1fa910881ba65b8469ecca6b58244917,
         type: 3}

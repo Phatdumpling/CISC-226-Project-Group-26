@@ -5,25 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 // By Phatdumpling
-public class Spin_self : MonoBehaviour
+public class Dead_glitched : MonoBehaviour
 {
     // Alot of variables idk bro
     
     
     public RectTransform thisObj;
 
-    private float Rx;
-    private float Ry;
-    private float Rz;
-
-    private float RSxMin;
-    private float RSyMin;
-    private float RSzMin;
-    
-    private float RSxMax;
-    private float RSyMax;
-    private float RSzMax;
-    
     public List<Sprite> glitched_sprites = new List<Sprite>();
     public Sprite original_sprite;
     private int zero = 0;
@@ -42,7 +30,6 @@ public class Spin_self : MonoBehaviour
         
         if (glitched == false) // Chance to change to glitch sprite
         {
-            Rotateframe();
             glitched = glitch();
         }
         else if (glitched == true) // Glitch phase it teleports around
@@ -52,8 +39,6 @@ public class Spin_self : MonoBehaviour
             if (counter % 3 == 0)
             {
                 fixedTeleport();
-                    
-                
             }
             
         }
@@ -68,50 +53,11 @@ public class Spin_self : MonoBehaviour
 
     private void Start() // Setting variables, random every game
     {
-
-        Rx = RotateDecide();
-        Ry = RotateDecide();
-        Rz = RotateDecide();
-
-        RSxMin = RotateSpeedDecideMin();
-        RSyMin = RotateSpeedDecideMin();
-        RSzMin = RotateSpeedDecideMin();
-
-        RSxMax = RotateSpeedDecideMax();
-        RSyMax = RotateSpeedDecideMax();
-        RSzMax = RotateSpeedDecideMax();
-
         theOBJpos = the_OBJ.transform;
         theOBJ_OriginalPos = theOBJpos.position;
         gss = glitched_sprites.Count - 1;
     }
-
-    private float RotateDecide() // Gives a rotation direction randomly
-    {
-        if (Random.Range(0, 10) > 5)
-        {
-            return 1;
-        }
-        return -1;
-    }
-
-    private float RotateSpeedDecideMax() // Gives a max rotation speed randomly
-    {
-        return Random.Range(0, 15);
-    }
     
-    private float RotateSpeedDecideMin() // Gives a min rotation speed randomly,
-                                         // it is negative so that the sprite
-                                         // moves erratically
-    {
-        return Random.Range(0, -7);
-    }
-
-    
-    private void Rotateframe() // Rotates sprite every frame in fixed update
-    {
-        thisObj.Rotate(Random.Range(RSxMin*Rx, RSxMax*Rx),Random.Range(RSyMin*Ry, RSyMax*Ry),Random.Range(RSzMin*Rz, RSzMax*Rz));
-    }
 
     
     private bool glitch() // Gets random glitched sprite 1% chance every frame
